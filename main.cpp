@@ -120,6 +120,8 @@ int main ()
 
     while(!WindowShouldClose())
     {
+        if(win_h < min_win_h) win_h = min_win_h;
+        if(win_w < min_win_w) win_w = min_win_w;
         
         candle_body_width = win_w / number_of_candles * (1-candles_padding);      
         frame_counter++;
@@ -246,7 +248,7 @@ int main ()
             drag_position.y = GetMousePosition().y - window_offset_y;
             drag_window = true;
         }
-        //TODO prevent window from resizing outside of the poiunt of getting to the limit
+        //TODO prevent window to jump if you resize to quickle to the left or down
         
         if(drag_window)
         {
@@ -255,12 +257,15 @@ int main ()
         }
         if(resize_w_left)
         {
+            float temp_window_offset_x = window_offset_x;
             drag_position.x = mouse_pos_end.x;
             win_w -= GetMousePosition().x - drag_position.x;
             if(!(win_w < min_win_w))
             {
                 window_offset_x += GetMousePosition().x - drag_position.x;
             }
+            else
+                window_offset_x = temp_window_offset_x;
         }
         if(resize_w_right)
         {
@@ -281,8 +286,6 @@ int main ()
         {
             drag_position.y = mouse_pos_end.y;
             win_h += GetMousePosition().y - drag_position.y;
-            if((win_h < min_win_h))
-                resize_w_bot = false;
         }
         if(win_h < min_win_h) win_h = min_win_h;
         if(win_w < min_win_w) win_w = min_win_w;
