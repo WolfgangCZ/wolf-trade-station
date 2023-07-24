@@ -259,7 +259,6 @@ int main ()
             win_w -= GetMousePosition().x - drag_position.x;
             if(!(win_w < min_win_w))
             {
-                win_w += GetMousePosition().x - drag_position.x;
                 window_offset_x += GetMousePosition().x - drag_position.x;
             }
         }
@@ -275,7 +274,6 @@ int main ()
             win_h -= GetMousePosition().y - drag_position.y;
             if(!(win_h < min_win_h))
             {
-                win_h += GetMousePosition().y - drag_position.y;
                 window_offset_y += GetMousePosition().y - drag_position.y;;
             }
         }
