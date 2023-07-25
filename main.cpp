@@ -2,6 +2,8 @@
 #include "raylib.h"
 #include "WidgetWindow.hpp"
 #include "FileManager.hpp"
+#include "HelperFunctions.hpp"
+#include "debug_loop.hpp"
 
 #include <vector>
 #include <string>
@@ -11,21 +13,15 @@
 #define WINDOW_BACK_COL     GRAY
 #define FPS                 60
 
-bool CheckMouseHoverRec(Rectangle rec)
-{
-    if(CheckCollisionPointRec(GetMousePosition(), rec)) return true;
-    else return false;
-}
-
-bool CheckMouseClickRec(Rectangle rec, int button)
-{
-    if(CheckCollisionPointRec(GetMousePosition(), rec) && IsMouseButtonPressed(button)) return true;
-    else return false;
-}
-
-
 int main ()
 {
+    Debugger();
+    return 0;
+}
+
+/*
+
+
     //MAX AROUND 10000 LINES CAN RAYLIB PROBABLY PRINT OR IDK
     std::string file1 = "test_file.txt";
     std::string file2 = "EURUSD_PERIOD_H1_pricedata_edit.txt";
@@ -59,6 +55,7 @@ int main ()
     // PrintVector(price_low);
     // std::cout << "CLOSES" << std::endl;
     // PrintVector(price_close);
+*/
 /*
     float widget_win_w = 200; 
     float widget_win_h = 200;
@@ -67,6 +64,7 @@ int main ()
     float widget_win_padding = 100;
     float widget_win_panel = 100;
 */
+/*
     double max = FindMax(price_high);
     double min = FindMin(price_low);
     
@@ -257,15 +255,13 @@ int main ()
         }
         if(resize_w_left)
         {
-            float temp_window_offset_x = window_offset_x;
             drag_position.x = mouse_pos_end.x;
             win_w -= GetMousePosition().x - drag_position.x;
-            if(!(win_w < min_win_w))
+            window_offset_x += GetMousePosition().x - drag_position.x;
+            if(win_w < min_win_w)
             {
-                window_offset_x += GetMousePosition().x - drag_position.x;
+                window_offset_x -= GetMousePosition().x - drag_position.x;
             }
-            else
-                window_offset_x = temp_window_offset_x;
         }
         if(resize_w_right)
         {
@@ -335,7 +331,6 @@ int main ()
             }
  
 
-
             DrawLineV(line_start, line_end, BLACK); //wick and wiggles
             DrawRectangleRec(candle_body, candle_body_color);
             DrawRectangleLinesEx(candle_body, 1, BLACK);
@@ -356,3 +351,5 @@ int main ()
     return 0;
 
 }
+
+*/
