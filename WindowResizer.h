@@ -1,8 +1,8 @@
-#ifndef WINDOW_RESIZER_HPP
-#define WINDOW_RESIZER_HPP
+#ifndef WINDOW_RESIZER_H
+#define WINDOW_RESIZER_H
 
 #include "raylib.h"
-#include "HelperFunctions.hpp"
+#include "HelperFunctions.h"
 
 class WindowResizer
 {
@@ -202,4 +202,4 @@ void WindowResizer::ResizeWindow()
 }
 
 
-#endif //WINDOW_RESIZER_HPP
+#endif //WINDOW_RESIZER_H

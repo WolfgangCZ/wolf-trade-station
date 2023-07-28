@@ -1,4 +1,4 @@
-#include "FileManager.hpp"
+#include "FileManager.h"
 
 void FileManager::ReplaceChar(std::string &str, char erased, char inserted)
 {

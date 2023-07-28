@@ -1,2 +1,2 @@
-#include "WidgetWindow.hpp"
+#include "WidgetWindow.h"
 

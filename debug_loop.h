@@ -1,6 +1,6 @@
 
-#ifndef DEBUG_LOOP_HPP
-#define DEBUG_LOOP_HPP
+#ifndef DEBUG_LOOP_H
+#define DEBUG_LOOP_H
 
 #include <iostream>
 #include <iomanip>
@@ -11,7 +11,7 @@
 
 #include "raylib.h"
 #include "src/test.h"
-#include "WindowResizer.hpp"
+#include "WindowResizer.h"
 
 Rectangle test_rec = {200, 200, 200, 200};
 Rectangle test_panel = {200, 150, 200, 50};
@@ -42,4 +42,4 @@ int Debugger()
     return 0; 
 }
 
-#endif //DEBUG_LOOP_HPP
+#endif //DEBUG_LOOP_H

@@ -7,7 +7,7 @@
 
 #include "raylib.h"
 #include "src/test.h"
-#include "WindowResizer.hpp"
+#include "WindowResizer.h"
 
 template <typename T>
 void PrintVector(std::vector<T> vector)

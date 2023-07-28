@@ -1,5 +1,6 @@
-#ifndef HELPER_FUNCTIONS_HPP
-#define HELPER_FUNCTIONS_HPP
+#ifndef HELPER_FUNCTIONS_H
+#define HELPER_FUNCTIONS_H
+
 
 #include "raylib.h"
 
@@ -15,4 +16,4 @@ bool CheckMouseClickRec(Rectangle rec, int button)
     else return false;
 }
 
-#endif //HELPER_FUNCTIONS_HPP
+#endif //HELPER_FUNCTIONS_H

@@ -1,9 +1,9 @@
 #include "tester.h"
 #include "raylib.h"
-#include "WidgetWindow.hpp"
-#include "FileManager.hpp"
-#include "HelperFunctions.hpp"
-#include "debug_loop.hpp"
+#include "WidgetWindow.h"
+#include "FileManager.h"
+#include "HelperFunctions.h"
+#include "debug_loop.h"
 
 #include <vector>
 #include <string>
